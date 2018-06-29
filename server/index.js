@@ -3,9 +3,6 @@ require('dotenv').config()
 const { DARK_SKY_API, NEWS_API, NODE_API_PORT, TODOIST_API } = process.env
 
 let sqlite3 = require('sqlite3').verbose()
-let lightRail = new sqlite3.Database('./databases/nj_transit_gtfs.db')
-let path = new sqlite3.Database('./databases/path.db')
-
 let express = require('express')
 let app = express()
 
@@ -61,9 +58,13 @@ ORDER BY start_st.departure_time
 LIMIT 5`
 
 app.get('/nj-transit', (req, res) => {
+  let lightRail = new sqlite3.Database('./databases/nj_transit_gtfs.db')
+
   lightRail.all(lightRailQuery, function(err, rows) {
       res.send(rows)
   })
+
+  lightRail.close()
 })
 
 const pathQuery = `SELECT DISTINCT start_st.departure_time
@@ -82,9 +83,13 @@ ORDER BY start_st.departure_time
 LIMIT 5`
 
 app.get('/path', (req, res) => {
+  let path = new sqlite3.Database('./databases/path.db')
+
   path.all(pathQuery, function(err, rows) {
     res.send(rows)
   })
+
+  path.close()
 })
 
 const todoistQueryOptions = {
