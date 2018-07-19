@@ -37,6 +37,11 @@ export default {
 </script>
 
 <style>
+div {
+  color: #ddd;
+  margin: 0;
+}
+
 #app {
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   padding: 20px;

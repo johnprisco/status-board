@@ -43,6 +43,10 @@ img {
   width: 64px;
 }
 
+.wrapper {
+  width: 30%;
+}
+
 .todo {
   display: flex;
   align-items: center;

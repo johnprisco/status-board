@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class='news'>
     <div class='wrapper' v-for='(article, index) in articles' :key='index'>
       <Headline :icon='article.icon' :title='article.title' :description='article.description' :valid-indices='indices' :index='index' />
     </div>
@@ -85,6 +85,10 @@ export default {
 </script>
 
 <style scoped>
+.news {
+  width: 70%;
+}
+
 .wrapper {
   padding-left: 0;
 }
