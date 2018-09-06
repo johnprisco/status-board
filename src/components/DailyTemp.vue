@@ -7,7 +7,6 @@
 </template>
 
 <script>
-/* eslint-disable no-console */
 export default {
   name: 'DailyTemp',
   props: {

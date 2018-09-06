@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 require('dotenv').config()
 const { DARK_SKY_API, NEWS_API, NODE_API_PORT, TODOIST_API } = process.env
 

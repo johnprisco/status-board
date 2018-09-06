@@ -23,7 +23,6 @@ import axios from 'axios'
 import moment from 'moment'
 import DailyTemp from './DailyTemp.vue'
 
-/* eslint-disable no-console */
 export default {
   name: 'Weather',
   data: () => ({
